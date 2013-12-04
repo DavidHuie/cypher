@@ -41,15 +41,21 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<gibberish>, ["~> 1.3.1"])
+      s.add_runtime_dependency(%q<thor>, ["~> 0.18.1"])
       s.add_development_dependency(%q<rspec>, ["~> 2.8.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.7"])
     else
+      s.add_dependency(%q<gibberish>, ["~> 1.3.1"])
+      s.add_dependency(%q<thor>, ["~> 0.18.1"])
       s.add_dependency(%q<rspec>, ["~> 2.8.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.7"])
     end
   else
+    s.add_dependency(%q<gibberish>, ["~> 1.3.1"])
+    s.add_dependency(%q<thor>, ["~> 0.18.1"])
     s.add_dependency(%q<rspec>, ["~> 2.8.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.7"])
