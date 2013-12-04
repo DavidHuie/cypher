@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.date = "2013-12-04"
   s.description = "A password management CLI tool"
   s.email = "dahuie@gmail.com"
+  s.executables = ["cypher"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.md"
@@ -27,8 +28,12 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
+    "bin/cypher",
     "cypher.gemspec",
     "lib/cypher.rb",
+    "lib/cypher/cli.rb",
+    "lib/cypher/password.rb",
+    "lib/cypher/password_repo.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/DavidHuie/cypher"
@@ -44,12 +49,14 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<gibberish>, ["~> 1.3.1"])
       s.add_runtime_dependency(%q<thor>, ["~> 0.18.1"])
       s.add_development_dependency(%q<rspec>, ["~> 2.8.0"])
+      s.add_development_dependency(%q<rdoc>, ["~> 4.0.1"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.7"])
     else
       s.add_dependency(%q<gibberish>, ["~> 1.3.1"])
       s.add_dependency(%q<thor>, ["~> 0.18.1"])
       s.add_dependency(%q<rspec>, ["~> 2.8.0"])
+      s.add_dependency(%q<rdoc>, ["~> 4.0.1"])
       s.add_dependency(%q<bundler>, ["~> 1.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.7"])
     end
@@ -57,6 +64,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<gibberish>, ["~> 1.3.1"])
     s.add_dependency(%q<thor>, ["~> 0.18.1"])
     s.add_dependency(%q<rspec>, ["~> 2.8.0"])
+    s.add_dependency(%q<rdoc>, ["~> 4.0.1"])
     s.add_dependency(%q<bundler>, ["~> 1.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.7"])
   end

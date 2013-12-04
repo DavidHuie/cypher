@@ -21,6 +21,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = 'A password management CLI tool'
   gem.email = 'dahuie@gmail.com'
   gem.authors = ['David Huie']
+  gem.executables = ['cypher']
 end
 
 Jeweler::RubygemsDotOrgTasks.new
