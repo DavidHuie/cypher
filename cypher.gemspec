@@ -11,19 +11,23 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Huie"]
   s.date = "2013-12-04"
-  s.description = "Password generation and management CLI tool"
+  s.description = "A password management CLI tool"
   s.email = "dahuie@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc"
+    "README.md"
   ]
   s.files = [
     ".rspec",
+    ".ruby-gemset",
+    ".ruby-version",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
-    "README.rdoc",
+    "README.md",
     "Rakefile",
     "VERSION",
+    "cypher.gemspec",
     "lib/cypher.rb",
     "spec/spec_helper.rb"
   ]
@@ -31,7 +35,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "2.1.11"
-  s.summary = "Password generation and management CLI tool"
+  s.summary = "A password management CLI tool"
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = 'cypher'
   gem.homepage = 'http://github.com/DavidHuie/cypher'
   gem.license = 'MIT'
-  gem.summary = 'Password generation and management CLI tool'
-  gem.description = 'Password generation and management CLI tool'
+  gem.summary = 'A password management CLI tool'
+  gem.description = 'A password management CLI tool'
   gem.email = 'dahuie@gmail.com'
   gem.authors = ['David Huie']
 end
