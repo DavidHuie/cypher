@@ -3,7 +3,7 @@ module Cypher
   class Repository
 
     attr_accessor :data
-    attr_reader :path
+    attr_reader :path, :hashed_password
 
     def initialize(path, hashed_password)
       @path = path
