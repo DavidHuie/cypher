@@ -1,6 +1,9 @@
 source 'http://rubygems.org'
 
+gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'daemons', '~> 1.1.9'
 gem 'gibberish', '~> 1.3.1'
+gem 'timers', '~> 1.1.0'
 gem 'thor', '~> 0.18.1'
 
 group :development do

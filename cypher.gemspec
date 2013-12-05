@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Huie"]
-  s.date = "2013-12-04"
+  s.date = "2013-12-05"
   s.description = "A password management CLI tool"
   s.email = "dahuie@gmail.com"
   s.executables = ["cypher"]
@@ -32,8 +32,11 @@ Gem::Specification.new do |s|
     "cypher.gemspec",
     "lib/cypher.rb",
     "lib/cypher/cli.rb",
+    "lib/cypher/client.rb",
+    "lib/cypher/config.rb",
     "lib/cypher/password.rb",
-    "lib/cypher/password_repo.rb",
+    "lib/cypher/repository.rb",
+    "lib/cypher/server.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/DavidHuie/cypher"
@@ -46,14 +49,20 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<bcrypt-ruby>, ["~> 3.1.2"])
+      s.add_runtime_dependency(%q<daemons>, ["~> 1.1.9"])
       s.add_runtime_dependency(%q<gibberish>, ["~> 1.3.1"])
+      s.add_runtime_dependency(%q<timers>, ["~> 1.1.0"])
       s.add_runtime_dependency(%q<thor>, ["~> 0.18.1"])
       s.add_development_dependency(%q<rspec>, ["~> 2.8.0"])
       s.add_development_dependency(%q<rdoc>, ["~> 4.0.1"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.7"])
     else
+      s.add_dependency(%q<bcrypt-ruby>, ["~> 3.1.2"])
+      s.add_dependency(%q<daemons>, ["~> 1.1.9"])
       s.add_dependency(%q<gibberish>, ["~> 1.3.1"])
+      s.add_dependency(%q<timers>, ["~> 1.1.0"])
       s.add_dependency(%q<thor>, ["~> 0.18.1"])
       s.add_dependency(%q<rspec>, ["~> 2.8.0"])
       s.add_dependency(%q<rdoc>, ["~> 4.0.1"])
@@ -61,7 +70,10 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<jeweler>, ["~> 1.8.7"])
     end
   else
+    s.add_dependency(%q<bcrypt-ruby>, ["~> 3.1.2"])
+    s.add_dependency(%q<daemons>, ["~> 1.1.9"])
     s.add_dependency(%q<gibberish>, ["~> 1.3.1"])
+    s.add_dependency(%q<timers>, ["~> 1.1.0"])
     s.add_dependency(%q<thor>, ["~> 0.18.1"])
     s.add_dependency(%q<rspec>, ["~> 2.8.0"])
     s.add_dependency(%q<rdoc>, ["~> 4.0.1"])
