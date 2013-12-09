@@ -3,28 +3,29 @@ module Cypher
   class Repository
 
     attr_accessor :data
-    attr_reader :path, :hashed_password
+    attr_reader :path, :hashed_password, :cipher
 
     def initialize(path, hashed_password)
       @path = path
       @hashed_password = hashed_password
+      @cipher ||= Gibberish::AES.new(hashed_password)
+    end
+
+    def encrypted_data
+      File.open(path) { |f| f.read }
+    end
+
+    def set_encrypted_data(enc_data)
+      File.open(path, 'w') { |f| f.write(enc_data) }
     end
 
     def decrypt
-      encrypted_data = File.open(path) { |f| f.read }
       decrypted_data = cipher.dec(encrypted_data)
       self.data = JSON(decrypted_data)
     end
 
     def persist
-      encrypted_data = cipher.enc(JSON.dump(data))
-      File.open(path, 'w') { |f| f.write(encrypted_data) }
-    end
-
-    private
-
-    def cipher
-      @cipher ||= Gibberish::AES.new(hashed_password)
+      set_encrypted_data(cipher.enc(JSON.dump(data)))
     end
 
   end

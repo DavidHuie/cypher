@@ -2,26 +2,26 @@ module Cypher
 
   class CLI < Thor
 
-    desc 'login USER', 'temporarily login as USER'
-    def login(user)
-      config = Config.new
-      server = Server.new(config.server_uri, config.server_ttl)
+    desc 'login', 'temporarily login'
+    def login
+      server = Server.new(Cypher.config.server_uri,
+                          Cypher.config.server_ttl)
       server.daemonize
       sleep(1)
     end
 
-    desc 'auth SERVICE USER', 'output the password for SERVICE with a login of USER'
-    def auth(service, user); end
+    # Generate salt
+    desc 'init', 'create required cypher files'
+    def init; end
 
-    desc 'gen SERVICE USER', 'generate a password for SERVICE with a login of USER'
-    def gen(service, user); end
+    desc 'pw SERVICE USER', 'output the password for SERVICE with a login of USER'
+    def pw(service, user); end
+
+    desc 'gen_pw SERVICE USER', 'generate a password for SERVICE with a login of USER'
+    def gen_pw(service, user); end
 
     desc 'list', 'lists all services and users'
     def list; end
-
-    desc 'history', 'output history of passwords for SERVICE with under the USER login'
-    def history(service, user); end
-
   end
 
 end

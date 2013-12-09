@@ -15,3 +15,11 @@ require 'cypher/repository'
 require 'cypher/server'
 
 $SAFE = 1
+
+module Cypher
+
+  def self.config
+    @config ||= Config.new
+  end
+
+end
