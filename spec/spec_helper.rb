@@ -3,5 +3,6 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'rspec'
 require 'cypher'
+require 'tempfile'
 
 RSpec.configure do |config|; end

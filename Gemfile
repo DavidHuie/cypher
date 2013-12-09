@@ -1,6 +1,5 @@
 source 'http://rubygems.org'
 
-gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'daemons', '~> 1.1.9'
 gem 'gibberish', '~> 1.3.1'
 gem 'timers', '~> 1.1.0'
@@ -11,4 +10,5 @@ group :development do
   gem 'rdoc', '~> 4.0.1'
   gem 'bundler', '~> 1.0'
   gem 'jeweler', '~> 1.8.7'
+  gem 'pry', '~> 0.9.12.4'
 end

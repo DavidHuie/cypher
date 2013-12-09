@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Huie"]
-  s.date = "2013-12-05"
+  s.date = "2013-12-09"
   s.description = "A password management CLI tool"
   s.email = "dahuie@gmail.com"
   s.executables = ["cypher"]
@@ -37,6 +37,7 @@ Gem::Specification.new do |s|
     "lib/cypher/password.rb",
     "lib/cypher/repository.rb",
     "lib/cypher/server.rb",
+    "spec/repository_spec.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/DavidHuie/cypher"
@@ -49,7 +50,6 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<bcrypt-ruby>, ["~> 3.1.2"])
       s.add_runtime_dependency(%q<daemons>, ["~> 1.1.9"])
       s.add_runtime_dependency(%q<gibberish>, ["~> 1.3.1"])
       s.add_runtime_dependency(%q<timers>, ["~> 1.1.0"])
@@ -58,8 +58,8 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rdoc>, ["~> 4.0.1"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.7"])
+      s.add_development_dependency(%q<pry>, ["~> 0.9.12.4"])
     else
-      s.add_dependency(%q<bcrypt-ruby>, ["~> 3.1.2"])
       s.add_dependency(%q<daemons>, ["~> 1.1.9"])
       s.add_dependency(%q<gibberish>, ["~> 1.3.1"])
       s.add_dependency(%q<timers>, ["~> 1.1.0"])
@@ -68,9 +68,9 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rdoc>, ["~> 4.0.1"])
       s.add_dependency(%q<bundler>, ["~> 1.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.7"])
+      s.add_dependency(%q<pry>, ["~> 0.9.12.4"])
     end
   else
-    s.add_dependency(%q<bcrypt-ruby>, ["~> 3.1.2"])
     s.add_dependency(%q<daemons>, ["~> 1.1.9"])
     s.add_dependency(%q<gibberish>, ["~> 1.3.1"])
     s.add_dependency(%q<timers>, ["~> 1.1.0"])
@@ -79,6 +79,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rdoc>, ["~> 4.0.1"])
     s.add_dependency(%q<bundler>, ["~> 1.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.7"])
+    s.add_dependency(%q<pry>, ["~> 0.9.12.4"])
   end
 end
 

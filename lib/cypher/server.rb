@@ -10,8 +10,19 @@ module Cypher
       @timer = Timers.new
     end
 
-    def authenticated?(repo_path, password)
-      hashed_password = BCrypt::Password.create(password).to_s
+    def self.digest(string)
+      (Digest::SHA2.new << string).to_s
+    end
+
+    def create_repo(repo_path, password)
+      hashed_password = self.class.digest(password)
+      @repo = Repository.new(repo_path, hashed_password)
+      @repo.data = {}
+      @repo.persist
+    end
+
+    def authenticate(repo_path, password)
+      hashed_password = self.class.digest(password)
       repo = Repository.new(repo_path, hashed_password)
       if repo.decrypt
         @repo = repo
