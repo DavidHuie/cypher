@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Huie"]
-  s.date = "2013-12-09"
+  s.date = "2013-12-10"
   s.description = "A password management CLI tool"
   s.email = "dahuie@gmail.com"
   s.executables = ["cypher"]
@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
     ".rspec",
     ".ruby-gemset",
     ".ruby-version",
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
@@ -37,10 +38,12 @@ Gem::Specification.new do |s|
     "lib/cypher/password.rb",
     "lib/cypher/repository.rb",
     "lib/cypher/server.rb",
+    "spec/client_spec.rb",
     "spec/repository_spec.rb",
+    "spec/server_spec.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = "http://github.com/DavidHuie/cypher"
+  s.homepage = "http://davidhuie.github.io/cypher"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "2.1.11"
