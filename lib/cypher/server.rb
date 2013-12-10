@@ -17,15 +17,20 @@ module Cypher
     def create_repo(repo_path, password)
       hashed_password = self.class.digest(password)
       @repo = Repository.new(repo_path, hashed_password)
-      @repo.data = {}
-      @repo.persist
+      @repo.bootstrap
     end
 
     def authenticate(repo_path, password)
       hashed_password = self.class.digest(password)
-      repo = Repository.new(repo_path, hashed_password)
-      if repo.decrypt
-        @repo = repo
+      @repo = Repository.new(repo_path, hashed_password)
+      if repo.exists?
+        begin
+          repo.decrypt
+        rescue OpenSSL::Cipher::CipherError
+          # If we have an invalid cipher
+          return false
+        end
+
         return true
       end
       false
