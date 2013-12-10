@@ -46,7 +46,8 @@ module Cypher
                              self.class.get_password)
         puts 'Authenticated!'
         server.daemonize
-        sleep(1)
+        # Ensure that the server thread has started.
+        sleep(0.1)
         exit(0)
       end
 
