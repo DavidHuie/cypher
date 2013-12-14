@@ -131,6 +131,7 @@ module Cypher
       self.class.check_for_login
       puts "Data: #{self.class.client.repo.data}"
     end
+
   end
 
 end
